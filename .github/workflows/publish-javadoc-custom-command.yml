@@ -1,0 +1,29 @@
+name: Deploy Javadoc
+
+on:
+  push:
+    branches:
+      - stable
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      permissions:
+        contents: read
+        pages: write
+        id-token: write
+    steps:
+      - name: Deploy JavaDoc 🚀
+        uses: MathieuSoysal/Javadoc-publisher.yml@v3.0.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          deploy-mode: artifact
+          java-version: 17
+          target-folder: docs
+          project: maven
+          custom-command: javadoc -d docs -sourcepath src/main/java com.tt1.test
