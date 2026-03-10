@@ -24,36 +24,35 @@ class App {
             scanner.nextLine(); // Limpiar el buffer
 
             switch (opcion) {
-                case 1 -> {
+                case 1:
                     System.out.print("Introduce el nombre de la tarea: ");
-                    String nombre = scanner.nextLine();
+                    String nombre1 = scanner.nextLine();
 
                     System.out.print("Introduce la fecha límite (en formato YYYY-MM-DD): ");
                     String fechaLimite = scanner.nextLine();
 
-                    servicio.crearTarea(nombre, fechaLimite);
-                }
-                case 2 -> {
+                    servicio.crearTarea(nombre1, fechaLimite);
+                    break;
+                case 2:
                     System.out.print("Introduce la dirección de correo electrónico: ");
                     String email = scanner.nextLine();
 
                     servicio.agregarEmail(email);
-                }
-                case 3 -> {
+                    break;
+                case 3:
                     System.out.print("Introduce el nombre de la tarea a completar: ");
-                    String nombre = scanner.nextLine();
+                    String nombre2 = scanner.nextLine();
 
-                    servicio.marcarCompletada(nombre);
-                }
-                case 4 -> {
+                    servicio.marcarCompletada(nombre2);
+                    break;
+                case 4:
                     servicio.tareasSinCompletar();
-                }
-                case 5 -> {
+                    break;
+                case 5:
                     return;
-                }
-                default -> {
+                default:
                     System.out.println("Opción inválida.");
-                }
+                    break;
             }
         }
     }
