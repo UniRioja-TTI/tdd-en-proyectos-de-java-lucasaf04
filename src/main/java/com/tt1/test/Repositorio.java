@@ -14,13 +14,13 @@ import java.util.Optional;
  * 
  * <p>Permite operaciones CRUD básicas sobre tareas y manejo de correos electrónicos.</p>
  * 
- * <p>Ejemplo de uso:
+ * Ejemplo de uso:
  * <pre>{@code
  * IDB db = new DBStub();
  * IRepositorio repo = new Repositorio(db);
  * repo.guardar(new ToDo());
  * List<ToDo> tareas = repo.getTareas();
- * }</pre></p>
+ * }</pre>
  * 
  * <p>Permite marcar tareas como completadas y buscar por nombre.</p>
  * 
