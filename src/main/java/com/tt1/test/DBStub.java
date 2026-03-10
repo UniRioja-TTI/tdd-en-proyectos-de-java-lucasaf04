@@ -2,10 +2,24 @@ package com.tt1.test;
 
 import java.util.*;
 
+/**
+ * Implementación de la interfaz {@link IDB} que actúa como una base de datos simulada
+ * (stub) en memoria.
+ * <p>
+ * Esta clase almacena tareas y correos electrónicos en listas internas y permite
+ * realizar operaciones CRUD sobre las tareas sin necesidad de una base de datos real.
+ * </p>
+ * 
+ * @author lucasaf04
+ * @version 1.0.0
+ */
 public class DBStub implements IDB {
     private final List<ToDo> tareas;
     private final List<String> emails;
 
+    /**
+     * Constructor que inicializa las listas internas de tareas y correos.
+     */
     public DBStub() {
         this.tareas = new ArrayList<>();
         this.emails = new ArrayList<>();
